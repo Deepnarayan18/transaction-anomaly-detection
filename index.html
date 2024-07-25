@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomaly Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <h2>Anomaly Detection in Transactions</h2>
+        <form action="/predict" method="post">
+            <label for="Transaction_Amount">Transaction Amount:</label>
+            <input type="text" id="Transaction_Amount" name="Transaction_Amount" required><br><br>
+            <label for="Average_Transaction_Amount">Average Transaction Amount:</label>
+            <input type="text" id="Average_Transaction_Amount" name="Average_Transaction_Amount" required><br><br>
+            <label for="Frequency_of_Transactions">Frequency of Transactions:</label>
+            <input type="text" id="Frequency_of_Transactions" name="Frequency_of_Transactions" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <h3>{{ prediction }}</h3>
+    </div>
+</body>
+</html>
